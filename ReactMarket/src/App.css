@@ -9,11 +9,7 @@
 
 html,
 body {
-    height: 100%;
     font-family: 'Montserrat Alternates', sans-serif;
-    width: 1200px;
-    margin: 0 auto;
-    background-color: #F7EDE8;
 
 }
 
@@ -44,4 +40,9 @@ ol {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
 }
