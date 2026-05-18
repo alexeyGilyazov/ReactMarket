@@ -8,16 +8,38 @@
 
 .nav__logo {
     position: relative;
+    transition: .5 all;
+}
+
+.nav__logo:hover .nav__logo_cicle {
+    transform: rotateZ(110deg);
+}
+
+.nav__logo_cicle {
+    transition: .5s all;
 }
 
 .nav__logo_text {
     position: absolute;
-    top: 35px;
-    left: 55px;
+    top: 25px;
+    left: 43px;
+    font-weight: 700;
+    transition: .5s all;
+    font-size: 14px;
+}
+
+.nav__logo:hover .nav__logo_text {
+    color: #CD4631;
+    left: -10px;
 }
 
 .nav__logo_textRed {
     color: #CD4631;
+    transition: all .5s;
+}
+
+.nav__logo:hover .nav__logo_textRed {
+    color: black;
 }
 
 .nav__list {

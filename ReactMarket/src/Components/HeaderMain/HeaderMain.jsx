@@ -3,9 +3,11 @@ import img1 from "../../img/headerMainImgSmall1.png";
 import img2 from "../../img/headerMainImgSmall2.png";
 import img3 from "../../img/headerMainImgSmall3.png";
 import { useState, useEffect } from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 export default function HeaderMain() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const { scrollYProgress } = useScroll();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -21,15 +23,28 @@ export default function HeaderMain() {
     { src: img3, alt: "image 3" },
   ];
 
+  const filter = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["blur(0px)", "blur(30px)"],
+  );
+
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 3]);
+
   return (
-    <div className="headerMain">
+    <motion.div className="headerMain" style={{ filter, scale }}>
       <h1 className="headerMain__title">
         Your Daily <br />
         <span className="headerMain__title red">Podcast</span>
       </h1>
-      <p className="headerMain__description">
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 2 }}
+        className="headerMain__description"
+      >
         We cover all kinds of categories and <br /> a weekly special guest.
-      </p>
+      </motion.p>
       <div className="headerMain__images">
         {images.map((img, index) => (
           <img
@@ -40,6 +55,6 @@ export default function HeaderMain() {
           />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
