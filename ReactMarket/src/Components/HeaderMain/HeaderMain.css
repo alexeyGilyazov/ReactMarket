@@ -19,7 +19,7 @@
     background-image: url('../../img/headerMainImg1.svg');
     background-size: contain;
     background-repeat: no-repeat;
-    left: -360px;
+    left: 0;
     position: absolute;
     top: 0px;
 }
@@ -37,7 +37,7 @@
 
 .headerMain__images {
     position: absolute;
-    right: 0;
+    right: 290px;
     top: 60px;
     display: grid;
     grid-template-columns: repeat(0, 1fr);

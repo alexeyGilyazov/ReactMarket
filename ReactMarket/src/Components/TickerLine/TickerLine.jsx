@@ -4,7 +4,7 @@ import "./TickerLine.css";
 function TickerLine({ items, offset, reverse }) {
   const direction = reverse ? -1 : 1;
 
-  const x = useTransform(offset, (value) => -value * 0.2 * direction); // коэффициент регулирует чувствительность
+  const x = useTransform(offset, (value) => -value * 0.2 * direction);
 
   return (
     <div className="ticker-container">
@@ -14,7 +14,6 @@ function TickerLine({ items, offset, reverse }) {
           x: x,
         }}
       >
-        {/* Дублируем для бесшовности */}
         {items}
         {items}
       </motion.div>
